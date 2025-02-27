@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #time {
+            font-size: 64px;
+        }
+
+        #seconds {
+            color: grey;
+        }
+
+        #date {
+            color: grey;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time"></div>
+    <div id="date"></div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const date = now.toDateString();
+            document.getElementById('time').innerHTML = `${hours}:${minutes}:<span id='seconds'>${seconds}</span>`;
+            document.getElementById('date').innerText = date;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html

@@ -1,0 +1,38 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Electron-packager output
+Timer-linux-x64/
+*.deb
+*.rpm
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Build files
+dist/
+build/
+
+# Cache
+.cache/
+
+# Electron settings
+/.config/
+
+# Desktop entry (if not meant to be tracked)
+~/.local/share/applications/Timer.desktop
+
+# Optional: Ignore icons if they are not custom
+icon.png
