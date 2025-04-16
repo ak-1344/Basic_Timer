@@ -17,7 +17,7 @@
         }
 
         #time {
-            font-size: 64px;
+            font-size: 48px;
         }
 
         #seconds {
@@ -41,7 +41,9 @@
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const seconds = now.getSeconds().toString().padStart(2, '0');
             const date = now.toDateString();
-            document.getElementById('time').innerHTML = `${hours}:${minutes}:<span id='seconds'>${seconds}</span>`;
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const hours12 = (hours % 12 || 12).toString().padStart(2, '0');
+            document.getElementById('time').innerHTML = `${hours12}:${minutes}:<span id='seconds'>${seconds}</span> ${period}`;
             document.getElementById('date').innerText = date;
         }
         setInterval(updateTime, 1000);
